@@ -3,7 +3,7 @@ name: LoC Limitations
 on: [push, pull_request]
 
 jobs:
-  count-lines-of-code: 
+  run-shell-commands: 
     runs-on: ubuntu-20.04
     steps:
       - name: echo a string
@@ -17,4 +17,13 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+  run-window-commands:
+    runs-on: windows-2022
+    steps:
+      - name: Directory PowerShell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
+
 
