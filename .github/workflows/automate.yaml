@@ -1,0 +1,14 @@
+name: LoC Limitations
+
+on: [push, pull_request]
+
+jobs:
+  count-lines-of-code: 
+    runs-on: ubuntu-20.04
+    steps:
+      - name: echo a string
+        run: echo "First GitHub Action"
+      - name: multiple script
+        run: |
+          node -v
+          npm -v
