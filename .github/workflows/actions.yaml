@@ -1,12 +1,13 @@
 name: Actions Workflow
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   run-github-actions:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
+        id: checkout
         uses: actions/checkout@v1
       - name: List files
         run: |
@@ -23,3 +24,7 @@ jobs:
           who-to-greet: Peter
       - name: Log greeting time
         run: echo "${{steps.greet.outputs.time}}"
+      - name: Add workspace permision
+        run: git config --global --add safe.directory /peteryefi/git-workflow
+      - name: Count Lines of Code (cloc)
+        uses: djdefi/cloc-action@3
