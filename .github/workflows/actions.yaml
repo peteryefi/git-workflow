@@ -25,6 +25,6 @@ jobs:
       - name: Log greeting time
         run: echo "${{steps.greet.outputs.time}}"
       - name: Add workspace permision
-        run: git config --global --add safe.directory /github/workspace
+        run: git config --global --add safe.directory /peteryefi/git-workflow
       - name: Count Lines of Code (cloc)
         uses: djdefi/cloc-action@3
