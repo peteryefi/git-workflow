@@ -24,3 +24,5 @@ jobs:
           who-to-greet: Peter
       - name: Log greeting time
         run: echo "${{steps.greet.outputs.time}}"
+      - name: Count Lines of Code (cloc)
+        uses: djdefi/cloc-action@3
