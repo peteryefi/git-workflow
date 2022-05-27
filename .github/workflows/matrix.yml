@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Log node node version
-      - run: node -v
+        run: node -v
       - uses: actions/setup-node@v1
         with:
           node-version: 6
